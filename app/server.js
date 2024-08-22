@@ -11,13 +11,8 @@ import rateLimit from "express-rate-limit"; // Import express-rate-limit
 import { connectDB } from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import clientsRoutes from "./routes/clientsRoutes.js";
-import documentRoutes from "./routes/documentRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
-import quotesRoutes from "./routes/quotesRoutes.js";
 import usersRoutes from "./routes/usersRoutes.js";
-import emailRoutes from "./routes/emailRoutes.js";
-import mediaRoutes from "./routes/mediaRoutes.js";
-import testingRoutes from "./routes/testingRoutes.js";
 import Logger from "./utils/Logger.js";
 
 const app = express();
@@ -61,13 +56,8 @@ app.use((err, req, res, next) => {
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
-app.use("/api/quotes", quotesRoutes);
-app.use("/api/docs", documentRoutes);
 app.use("/api/users", usersRoutes);
 app.use("/api/clients", clientsRoutes);
-app.use("/api/email", emailRoutes);
-app.use("/api/media", mediaRoutes);
-app.use("/api/test", testingRoutes);
 
 // Optional: 404 handler
 app.use((req, res) => {

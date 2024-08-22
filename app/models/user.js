@@ -28,10 +28,6 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    companyName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,

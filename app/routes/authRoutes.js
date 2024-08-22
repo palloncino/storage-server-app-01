@@ -71,7 +71,7 @@ router.post("/verify-token", async (req, res) => {
 });
 
 router.post("/signup", async (req, res) => {
-  const { username, firstName, lastName, companyName, email, password } =
+  const { username, firstName, lastName, email, password } =
     req.body;
 
   try {
@@ -87,9 +87,8 @@ router.post("/signup", async (req, res) => {
       username,
       firstName,
       lastName,
-      companyName,
       email,
-      password, // Pass the password directly, it will be hashed by the model hook
+      password,
       role: "user",
     });
 
